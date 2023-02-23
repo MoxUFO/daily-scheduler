@@ -25,7 +25,14 @@ $(function () {
   }
 
   function timeTracker(){
-    
+    let exactHour = dayjs().format('HA')
+    console.log(exactHour)
+    let givenHour = document.querySelectorAll('.hour')
+
+    for (let i = 0; i < givenHour.length; i++) {
+     console.log(givenHour[i]) 
+    }
+    // console.log(testMe)
   }
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -46,7 +53,8 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
   let displayDate = dayjs().format('dddd, MMMM D')
-  let test = $('.hour10').text()
-  console.log(test)
+  // let test = $('.hour10').text()
+  // console.log(test)
   $('#currentDay').text(displayDate)
+  timeTracker()
 });
