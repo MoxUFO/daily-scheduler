@@ -25,21 +25,27 @@ $(function () {
   }
 
   function timeTracker(){
-    let exactHour = dayjs().format('HA')
+    let exactHour = dayjs().format('H')
+    let hour9 = $('#hour-9').children('.hour').text()
+    let hour10 = $('#hour-10').children('.hour').text()
     let hour11 = $('#hour-11').children('.hour').text()
-     let hoursDiv = document.querySelectorAll('.hour')
-    console.log(hoursDiv)
-    testNum = '11AM'
-    console.log(exactHour == testNum)
-    if (exactHour === testNum){
+    let hour12 = $('#hour-12').children('.hour').text()
+    let hour1 = $('#hour-1').children('.hour').text()
+    let hour2 = $('#hour-2').children('.hour').text()
+    let hour3 = $('#hour-3').children('.hour').text()
+    let hour4 = $('#hour-4').children('.hour').text()
+    let hour5 = $('#hour-5').children('.hour').text()
+    let hoursArray = [hour9,hour10,hour11,hour12,hour1,hour2,hour3,hour4,hour5]
+    // console.log(exactHour)
+
+    for (let i = 0; i < hoursArray.length; i++) {
+      // console.log(hoursArray[3])
+      if ( exactHour == hoursArray[i]){
+        
+      }
       
     }
-    let givenHour = document.querySelectorAll('.hour')
 
-    for (let i = 0; i < givenHour.length; i++) {
-    //  console.log(givenHour[i]) 
-    }
-    // console.log(testMe)
   }
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -59,10 +65,12 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-  let displayDate = dayjs().format('dddd, MMMM D')
-  let testDay = dayjs().hour()
-  // let test = $('.hour10').text()
-  // console.log(test)
-  $('#currentDay').text(displayDate)
+
+
+  setInterval(function(){
+    $('#currentDay').text(dayjs().format('MMM,D,YYYY h:mm:ss'))
+  },10)
+
+
   timeTracker()
 });
