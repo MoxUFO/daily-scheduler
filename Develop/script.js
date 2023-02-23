@@ -15,8 +15,8 @@ $(function () {
   // console.log(eventTime)
    localStorage.setItem(eventTime, eventDescription)
   //  console.log(displayEvent)
-   $(this).siblings('.description').text(savedEvent)
-   console.log(savedEvent)
+   
+   
   }
 // console.log(localStorage)
   
@@ -26,11 +26,18 @@ $(function () {
 
   function timeTracker(){
     let exactHour = dayjs().format('HA')
-    console.log(exactHour)
+    let hour11 = $('#hour-11').children('.hour').text()
+     let hoursDiv = document.querySelectorAll('.hour')
+    console.log(hoursDiv)
+    testNum = '11AM'
+    console.log(exactHour == testNum)
+    if (exactHour === testNum){
+      
+    }
     let givenHour = document.querySelectorAll('.hour')
 
     for (let i = 0; i < givenHour.length; i++) {
-     console.log(givenHour[i]) 
+    //  console.log(givenHour[i]) 
     }
     // console.log(testMe)
   }
@@ -53,6 +60,7 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
   let displayDate = dayjs().format('dddd, MMMM D')
+  let testDay = dayjs().hour()
   // let test = $('.hour10').text()
   // console.log(test)
   $('#currentDay').text(displayDate)
