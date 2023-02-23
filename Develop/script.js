@@ -3,8 +3,9 @@
 // in the html.
 
 $(function () {
+
    var textArea = document.querySelectorAll('textarea')
-   console.log(textArea )
+  //  console.log(textArea )
   $('.saveBtn').on('click', saveEvent)
 
   function saveEvent(){
@@ -13,17 +14,17 @@ $(function () {
   let eventTime = $(this).siblings('.hour').text()
   // console.log(eventTime)
    localStorage.setItem(eventTime, eventDescription)
-   let savedEvent = localStorage.getItem(eventTime)
   //  console.log(displayEvent)
    $(this).siblings('.description').text(savedEvent)
    console.log(savedEvent)
   }
-console.log(localStorage)
+// console.log(localStorage)
   
     for (let index = 0; index < textArea.length; index++) {
-      textArea[index].value = localStorage.getItem(textArea[index].id)
+      textArea[index].value = localStorage.getItem(textArea[index].id) 
+  }
 
-      
+  function timeTracker(){
     
   }
   // TODO: Add a listener for click events on the save button. This code should
@@ -44,4 +45,8 @@ console.log(localStorage)
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+  let displayDate = dayjs().format('dddd, MMMM D')
+  let test = $('.hour10').text()
+  console.log(test)
+  $('#currentDay').text(displayDate)
 });
