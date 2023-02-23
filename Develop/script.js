@@ -24,29 +24,44 @@ $(function () {
       textArea[index].value = localStorage.getItem(textArea[index].id) 
   }
 
-  function timeTracker(){
-    let exactHour = dayjs().format('H')
-    let hour9 = $('#hour-9').children('.hour').text()
-    let hour10 = $('#hour-10').children('.hour').text()
-    let hour11 = $('#hour-11').children('.hour').text()
-    let hour12 = $('#hour-12').children('.hour').text()
-    let hour1 = $('#hour-1').children('.hour').text()
-    let hour2 = $('#hour-2').children('.hour').text()
-    let hour3 = $('#hour-3').children('.hour').text()
-    let hour4 = $('#hour-4').children('.hour').text()
-    let hour5 = $('#hour-5').children('.hour').text()
+  // $('.time-block').each(function(){})
+    // let timeBlock = parseInt($(this).attr('id'))
+    // console.log(timeBlock)
+    let hour9 = $('#9')
+    let hour10 = $('#10')
+    let hour11 = $('#11')
+    let hour12 = $('#12')
+    let hour1 = $('#13')
+    let hour2 = $('#14')
+    let hour3 = $('#15')
+    let hour4 = $('#16')
+    let hour5 = $('#17')
+    let hourCount = [9,10,11,12,13,14,15,16,17]
     let hoursArray = [hour9,hour10,hour11,hour12,hour1,hour2,hour3,hour4,hour5]
-    // console.log(exactHour)
+    let exactHour = dayjs().format('H')
+     for (let i = 0; i < hoursArray.length; i++) {
+      let timeBlock = parseInt($(hoursArray[i]).attr('id'))
+      console.log(timeBlock)
+      if(hourCount[i] < exactHour) {
+        console.log()
+        $(hoursArray[i]).removeClass('future')
+        $(hoursArray[i]).removeClass('present')
+        $(hoursArray[i]).addClass('past')
+        } else if(hourCount[i] == exactHour){
+          $(hoursArray[i]).removeClass('future')
+          $(hoursArray[i]).removeClass('past')
+          $(hoursArray[i]).addClass('present') 
+        } else{
+          $(hoursArray[i]).removeClass('.present')
+          $(hoursArray[i]).removeClass('.past')
+          $(hoursArray[i]).addClass('future')  
+        }
 
-    for (let i = 0; i < hoursArray.length; i++) {
-      // console.log(hoursArray[3])
-      if ( exactHour == hoursArray[i]){
-        
-      }
-      
-    }
+     }
 
-  }
+  
+   
+ 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -72,5 +87,5 @@ $(function () {
   },10)
 
 
-  timeTracker()
+
 });
