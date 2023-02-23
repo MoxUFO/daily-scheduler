@@ -3,7 +3,8 @@
 // in the html.
 
 $(function () {
-
+   var textArea = document.querySelectorAll('textarea')
+   console.log(textArea )
   $('.saveBtn').on('click', saveEvent)
 
   function saveEvent(){
@@ -15,10 +16,15 @@ $(function () {
    let savedEvent = localStorage.getItem(eventTime)
   //  console.log(displayEvent)
    $(this).siblings('.description').text(savedEvent)
+   console.log(savedEvent)
   }
-// console.log(savedEvent)
-  function displayEvent(){
+console.log(localStorage)
+  
+    for (let index = 0; index < textArea.length; index++) {
+      textArea[index].value = localStorage.getItem(textArea[index].id)
 
+      
+    
   }
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
