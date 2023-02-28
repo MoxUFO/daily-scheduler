@@ -9,7 +9,7 @@ $(function () {
 
   function saveEvent() {
     let eventDescription = $(this).siblings(".description").val();
-    let eventTime = $(this).siblings(".hour").text();// 
+    let eventTime = $(this).siblings(".hour").text();
     localStorage.setItem(eventTime, eventDescription);
   }
 
