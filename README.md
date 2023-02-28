@@ -18,4 +18,7 @@ each hour in a 9-5 work day is presented to the user in a grid-like fashion. Eac
 
 ## Image of App
 
+![Screenshot_20230228_060158](https://user-images.githubusercontent.com/121896793/222002502-d80fcef8-0ad1-42ac-9cbb-0e661a9ab00e.png)
+
+
 ##Link to live site
