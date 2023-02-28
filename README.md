@@ -8,11 +8,6 @@ a sponsive display keeps you updated on when a window of time is yet to come, is
 this app can help anyone needing to bring time management to the for front of their lives. Not everyone has the discipline to keep true
 to the concept, and that okay that. Give it a try to see the impact it can have on your life.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
 ## Installation
 
 N/A
